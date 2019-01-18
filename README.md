@@ -1,6 +1,6 @@
 # rallio-todos
 
-Use this doc for the app spec requirements. Begin by understanding the Template section of the Functionality Requirements.
+Use this doc for the app spec requirements. Begin by understanding the [Template section of the Functionality Requirements](https://github.com/marclundgren/rallio-todos#template).
 
 If you have any questions about the requirements, this document, or running the ember application on your computer locally, let us know as soon as you can.
 
@@ -8,7 +8,7 @@ If you have any questions about the requirements, this document, or running the 
 
 ### Template
 
-Ember.js uses a templating system called `htmlbars`, which is modeled after [Handlebars](http://handlebarsjs.com/). Check out their documentation for reference only, ignoring the javascript portion of handlebars.
+[Ember.js](https://emberjs.com/) uses a templating system called `htmlbars`, which is modeled after [Handlebars](http://handlebarsjs.com/). Check out their documentation for reference only, ignoring the javascript portion of handlebars.
 
 Handlebars and htmlbars are templating systems that produce raw html markup. In this challenge, we can provide the end result desired [html markup](https://github.com/rallio/rallio-todos/blob/master/index-static.html). Your goal is to write use ember.js to write the dynamic templates and javascript controllers to "wire up" the UI.
 
@@ -25,13 +25,17 @@ You'll note a few things in the template:
 * (optional) the footer has 3 selectable filters: "All", "Active", "Completed"
 * (optional) the footer has a "clear all completed" button
 
-### No todos
+### (required) No todos
 
-When there are no todos, `#main` and `#footer` should be hidden.
+When there are no todos, the list of todos `<main></main>` and (optional) filters `<footer></footer>` should not be displayed. IOW, only display these elements when there is at least one todo.
 
-### New todo
+### (required) New todo
 
-New todos are entered in the input at the top of the app. The input element should be focused when the page is loaded, preferably by using the autofocus input attribute. Pressing Enter creates the todo, appends it to the todo list, and clears the input. Make sure to `.trim()` the input and then check that it's not empty before creating a new todo.
+New todos are entered in the input at the top of the app. (optional) The input element should be focused when the page is loaded, preferably by using the autofocus input attribute. (optional) Pressing Enter creates the todo, appends it to the todo list, and clears the input. (optional) Make sure to `.trim()` the input and then check that it's not empty before creating a new todo.
+
+### (required) Marking one todo as completed
+
+
 ### (optional) Mark all as complete
 
 This checkbox toggles all the todos to the same state as itself. Make sure to clear the checked state after the "Clear completed" button is clicked. The "Mark all as complete" checkbox should also be updated when single todo items are checked/unchecked. Eg. When all the todos are checked it should also get checked.
@@ -45,18 +49,26 @@ A todo item has three possible interactions:
 
 3. Hovering over the todo shows the remove button (`.destroy`)
 
-### Editing
+### (optional) Editing
 
 When editing mode is activated it will hide the other controls and bring forward an input that contains the todo title, which should be focused (`.focus()`). The edit should be saved on both blur and enter, and the editing class should be removed. Make sure to `.trim()` the input and then check that it's not empty. If it's empty the todo should instead be destroyed. If escape is pressed during the edit, the edit state should be left and any changes be discarded.
-### Counter
+### (optional) Counter
 
 Displays the number of active todos in a pluralized form. Make sure the number is wrapped by a `<strong>` tag. Also make sure to pluralize the item word correctly: 0 items, 1 item, 2 items. Example: 2 items left
 
-### Clear completed button
+### (optional) Clear completed button
 
 Removes completed todos when clicked. Should be hidden when there are no completed todos.
 
 ### (optional) All, Active, Completed Filters
+
+"All" should be active by default and will display all todos, regardless of their "completed" status. Selecting the "Active" filter will display only todo items that have `completed === false`. Selectin the "Completed" filter will display only todo items that have `completed === true`.
+
+### (required) UI layout
+
+Structure the UI to look something like the following example. Structure and layout are much more important than the "look-and-feel" or "skin". Focus on getting elements to align properly first before making it look 💄. Consider todos with a very long body, be careful these types of todos maintain the integrity of the structure.
+
+![example ui](https://user-images.githubusercontent.com/1154834/51417110-69917a80-1b31-11e9-8de3-f83f4ab924b8.png)
 
 ## Ember.js Concepts
 Routes
