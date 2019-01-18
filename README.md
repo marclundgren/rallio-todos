@@ -13,7 +13,7 @@ If you have any questions about the requirements, this document, or running the 
 Handlebars and htmlbars are templating systems that produce raw html markup. In this challenge, we can provide the end result desired [html markup](https://github.com/rallio/rallio-todos/blob/master/index-static.html). Your goal is to write use ember.js to write the dynamic templates and javascript controllers to "wire up" the UI.
 
 You'll note a few things in the template:
-* There is no styling, this you can add
+* There is no styling, that's for you to add 😁
 * There is a header, main section and footer
 * The header has an input for adding a new todo
 * Inside the main section a list `ul` of todos `li` exist
