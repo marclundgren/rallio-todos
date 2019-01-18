@@ -14,55 +14,34 @@ Handlebars and htmlbars are templating systems that produce raw html markup. In 
 
 You'll note a few things in the template:
 * There is no styling, this you can add
-* There is a header
-* There is a main section
-* There is a footer
-* Inside the main section, a list `ul` of todos `li` live
-* Each `li` todo has a conditional `completed` class name
-* Each `li` todo has a todo label (e.g. Buy a unicorn)
-* Each `li` todo has a "destroy" button
+* There is a header, main section and footer
 * The header has an input for adding a new todo
+* Inside the main section a list `ul` of todos `li` exist
+* Each `li` todo has a conditional `completed` class name
+* Each `li` todo has a label (e.g. Buy a unicorn)
 * (optional) the footer has 3 selectable filters: "All", "Active", "Completed"
 * (optional) the footer has a "clear all completed" button
 
 ### (required) No todos
-
 When there are no todos, the list of todos `<main></main>` and (optional) filters `<footer></footer>` should not be displayed. IOW, only display these elements when there is at least one todo.
 
 ### (required) New todo
+New todos are entered in the input at the top of the app. When text is present inside the input a button should appear. Pressing the button creates the todo, appends it to the todo list, and clears the input. (optional) Pressing Enter when the input is focuses behaves the same way by adding the todo and clearing the input. (optional) Before creating the todo, `.trim()` the input. (optional) Check that it's not empty before creating a new todo.
 
-New todos are entered in the input at the top of the app. (optional) The input element should be focused when the page is loaded, preferably by using the autofocus input attribute. (optional) Pressing Enter creates the todo, appends it to the todo list, and clears the input. (optional) Make sure to `.trim()` the input and then check that it's not empty before creating a new todo.
+### (optional) New todo focus
+The input element should be focused when the page is loaded, preferably by using the autofocus input attribute.
 
-### (required) Marking one todo as completed
+### (required) clicking a todo's checkbox
+Clicking the checkbox marks the todo as complete by updating its completed value and toggling the class completed on its parent `<li>`. (optional) clicking the checkbox again will toggle the completed task back to uncompleted.
 
-
-### (optional) Mark all as complete
-
-This checkbox toggles all the todos to the same state as itself. Make sure to clear the checked state after the "Clear completed" button is clicked. The "Mark all as complete" checkbox should also be updated when single todo items are checked/unchecked. Eg. When all the todos are checked it should also get checked.
-Item
-
-A todo item has three possible interactions:
-
-1. Clicking the checkbox marks the todo as complete by updating its completed value and toggling the class completed on its parent `<li>`
-
-2. Double-clicking the `<label>` activates editing mode, by toggling the .editing class on its `<li>`
-
-3. Hovering over the todo shows the remove button (`.destroy`)
-
-### (optional) Editing
-
-When editing mode is activated it will hide the other controls and bring forward an input that contains the todo title, which should be focused (`.focus()`). The edit should be saved on both blur and enter, and the editing class should be removed. Make sure to `.trim()` the input and then check that it's not empty. If it's empty the todo should instead be destroyed. If escape is pressed during the edit, the edit state should be left and any changes be discarded.
 ### (optional) Counter
-
 Displays the number of active todos in a pluralized form. Make sure the number is wrapped by a `<strong>` tag. Also make sure to pluralize the item word correctly: 0 items, 1 item, 2 items. Example: 2 items left
 
 ### (optional) Clear completed button
-
-Removes completed todos when clicked. Should be hidden when there are no completed todos.
+Removes completed todos when clicked. (optional) Should be hidden when there are no completed todos.
 
 ### (optional) All, Active, Completed Filters
-
-"All" should be active by default and will display all todos, regardless of their "completed" status. Selecting the "Active" filter will display only todo items that have `completed === false`. Selectin the "Completed" filter will display only todo items that have `completed === true`.
+"All" should be active by default and will display all todos, regardless of their "completed" status. Selecting the "Active" filter will display only todo items that have `completed === false`. Selecting the "Completed" filter will display only todo items that have `completed === true`.
 
 ### (required) UI layout
 
