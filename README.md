@@ -50,17 +50,20 @@ Structure the UI to look something like the following example. Structure and lay
 ![example ui](https://user-images.githubusercontent.com/1154834/51417110-69917a80-1b31-11e9-8de3-f83f4ab924b8.png)
 
 ## Ember.js Concepts
-Routes
-    In Ember, the state of an application is represented by a URL. Each URL has a corresponding route object that controls what is visible to the user.
+### Routes
+In Ember, the state of an application is represented by a URL. Each URL has a corresponding route object that controls what is visible to the user.
 
-Models
-    Every route has an associated model, containing the data associated with the current state of the application.[20] While one can use jQuery to load JSON objects from a server and use those objects as models, most applications use a model library such as Ember Data to handle this.
+### Models
+Every route has an associated model, containing the data associated with the current state of the application. While one can use jQuery to load JSON objects from a server and use  `   `those objects as models, most applications use a model library such as Ember Data to handle this.
 
-Templates
-    Templates are used to build the application's HTML and are written with the HTMLBars templating language. (HTMLBars is a variation of Handlebars that builds DOM elements rather than a String.)[21]
+### Templates
+Templates are used to build the application's HTML and are written with the HTMLBars templating language. (HTMLBars is a variation of Handlebars that builds DOM elements rather than a String.)
 
-Components
-    A component is a custom HTML tag. Behavior is implemented using JavaScript and its appearance is defined using HTMLBars templates. Components "own" their data. They can also be nested and can communicate with their parent components through actions (events). Other component libraries such as Polymer can also be used with Ember.
+### Components
+A component is a custom HTML tag. Behavior is implemented using JavaScript and its appearance is defined using HTMLBars templates. Components "own" their data. They can also be nested and can communicate with their parent components through actions (events). Other component libraries such as Polymer can also be used with Ember.
+
+## Applying Ember.js Concepts to the todo app
+Use the Ember Data store when creating Todos. This involves creating a todo model. Run this command in your cli to get started `ember generate model todo`. Feel free to put all the logic in the Application Controller. (optional, but highly recommended) use components `ember generate component ui-todo`, this might be easier to manage individual todo state UI and actions. https://guides.emberjs.com/release/components/defining-a-component/
 
 ## Ember.js Prerequisites
 
